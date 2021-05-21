@@ -21,3 +21,14 @@ after_sucess:
  - docker push rickopsourced/multi-nginx
  - docker push rickopsourced/multi-server
  - docker push rickopsourced/multi-worker
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'multi-docker'
+  env: 'MultiDocker-env-1'
+  bucket_name: 'elasticbeanstalk-us-east-2-244744701857'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
