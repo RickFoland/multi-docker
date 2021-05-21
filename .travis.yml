@@ -15,7 +15,7 @@ after_sucess:
  - docker build -t rickopsourced/multi-server ./server
  - docker build -t rickopsourced/multi-worker ./worker
 #Log into the docker CLI
- - echo "$DOCKER_PASSWORD" | docker login - u "$DOCKER_ID" --password-stdin
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #push images to docker hub
  - docker push rickopsourced/multi-client
  - docker push rickopsourced/multi-nginx
